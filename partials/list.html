@@ -17,7 +17,7 @@
       descending
     </label>
 </div>
-  <ul class="artistlist">
+  <ul class="artistlist" ng-show='query'>
     <li class="artist cf" ng-repeat="item in mandi.records | filter: query | orderBy: mandiOrder:direction">
     <a href="#/details/{{mandi.records.indexOf(item)}}">
       <div class="info">

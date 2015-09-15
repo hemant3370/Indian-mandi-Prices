@@ -19,7 +19,7 @@
 </div>
   <ul class="artistlist">
     <li class="artist cf" ng-repeat="item in mandi.records | filter: query | orderBy: mandiOrder:direction">
-    <a href="#/details/{{mandi.indexOf(item)}}">
+    <a href="#/details/{{mandi.records.indexOf(item)}}">
       <div class="info">
         
         <h2>{{item.commodity}}</h2>

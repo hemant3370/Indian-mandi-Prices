@@ -266,9 +266,6 @@ transition: all 0.3 ease-out;
   background: #FDF6E3;
   opacity: 1;
   -webkit-transform: scale(1.2);
--moz-transform: scale(1.2); 
--o-transform: scale(1.2); 
-transform: scale(1.2);
 }
 
 .artist img {

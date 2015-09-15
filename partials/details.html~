@@ -1,12 +1,13 @@
 <section class="artistinfo">
 <div class="artist cf" ng-model="artists">
-<a href="#/details/{{prevItem}}" class="btn btn-left">&lt;</a>
+<a href="#/details/{{preItem}}" class="btn btn-left">&lt;</a>
     <a href="#/details/{{nextItem}}" class="btn btn-right">&gt;</a>
-    <h1>{{mandi.records[whichItem].name}}</h1>
+    <h1>{{mandi.records[whichItem].commodity}} from {{mandi.records[whichItem].market}} </h1>
     <div class="info">
-      <h3>{{mandi.records[whichItem].state}}</h3>
-      
-      <div class="bio">{{mandi.records[whichItem].timestamp}}</div>
+      <h2>Variety: {{mandi.records[whichItem].variety}}  Arrival date: {{mandi.records[whichItem].arrival_date}} 
+      <h3>{{mandi.records[whichItem].district}}, {{mandi.records[whichItem].state}}</h3>
+      <h4>Min.Price {{mandi.records[whichItem].min_price}} Max.Price {{ mandi.records[whichItem].max_price}} Modal Price {{mandi.records[whichItem].modal_price}}</h4>
+      <div class="bio">Time data Uploaded : {{mandi.records[whichItem].timestamp}}</div>
     </div>
   </div>
   <a href="index.html#/list">&laquo; Back to search</a>

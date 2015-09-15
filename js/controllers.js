@@ -12,6 +12,19 @@ mandiControllers.controller('DetailsController' , ['$scope', '$http','$routePara
 $http.get('https://data.gov.in/api/datastore/resource.json?resource_id=9ef84268-d588-465a-a308-a864a43d0070&api-key=84774f4bb9dc59c6e753bfea7e3e2e5e&limit=999').success(function(data) {
 $scope.mandi = data;
 $scope.whichItem = $routeParams.itemId;
+
+if($routeParams.itemId > 0){
+$scope.preItem = Number($routeParams.itemId)-1;
+}
+else{
+$scope.preItem = $scope.mandi.records.length-1;
+}
+if($routeParams.itemId < $scope.mandi.records.length-1){
+$scope.nextItem = Number($routeParams.itemId)+1;
+}
+else{
+$scope.nextItem = 0;
+}
 });
 
 }]);
