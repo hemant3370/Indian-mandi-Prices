@@ -1,24 +1,30 @@
 <section>
 <div class="search">
-<h1>Mandi Directory</h1>
+<h1>Mandi Prices</h1>
 <label>Search: </label>
-<input ng-model="query" placeholder="Search for commodities" autofocus>
+
+<input type="text" name="text" ng-model="key" placeholder="Search for commodities" autofocus>
+<button ng-click="ListController()" class="btn" >Search</button>
 <label class="formgroup">by:
-<select ng-model="mandiOrder">
-<option value="market">Market</option>
+<select ng-model="mandiOrder" >
+<option value="State">State</option>
+<option value="Commodity">Commodity</option>
+<option value="district">District</option>
 </select>
 </label>
 <label class="formgroup">
       <input type="radio" ng-model="direction" name="direction" checked>
       ascending
+       
      </label>
     <label class="formgroup">
       <input type="radio" ng-model="direction" name="direction" value="reverse">
       descending
     </label>
 </div>
-  <ul class="artistlist" ng-show='query'>
-    <li class="artist cf" ng-repeat="item in mandi.records | filter: query | orderBy: mandiOrder:direction">
+  <ul class="artistlist"  >
+    
+    <li class="artist cf" ng-repeat="item in mandi.records">
     <a href="#/details/{{mandi.records.indexOf(item)}}">
       <div class="info">
         
