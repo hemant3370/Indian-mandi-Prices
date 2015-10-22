@@ -1,9 +1,10 @@
+
 var mandiControllers = angular.module('mandiControllers', []);
 var url = null;
 mandiControllers.controller('ListController' , ['$scope', '$http',function($scope, $http) {
  
 
-$scope.url = 'https://data.gov.in/node/356921/datastore/export/json';
+$scope.url = 'https://data.gov.in/api/datastore/resource.json?resource_id=9ef84268-d588-465a-a308-a864a43d0070&api-key=84774f4bb9dc59c6e753bfea7e3e2e5e';
 url = 'https://data.gov.in/api/datastore/resource.json?resource_id=9ef84268-d588-465a-a308-a864a43d0070&api-key=84774f4bb9dc59c6e753bfea7e3e2e5e';
 $http.get($scope.url).success(function(data) {
 $scope.mandi = data;})
@@ -13,13 +14,14 @@ $scope.url = 'https://data.gov.in/api/datastore/resource.json?resource_id=9ef842
 url =  'https://data.gov.in/api/datastore/resource.json?resource_id=9ef84268-d588-465a-a308-a864a43d0070&api-key=84774f4bb9dc59c6e753bfea7e3e2e5e&filters['+$scope.mandiOrder+']='+$scope.key;
 $http.get($scope.url).success(function(data) {
 $scope.mandi = data;})
+
 }
 }]);
 
 
 
 mandiControllers.controller('DetailsController' , ['$scope', '$http','$routeParams',function($scope, $http, $routeParams) {
- 
+
 $http.get(url).success(function(data) {
 
 $scope.mandi = data;
