@@ -44,8 +44,7 @@ $scope.nextItem = Number($routeParams.itemId)+1;
 else{
 $scope.nextItem = 0;
 }
-);
-}
+});
 
 
 }]);
