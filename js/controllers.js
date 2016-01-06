@@ -12,7 +12,7 @@ $http.get($scope.url).success(function(data) {
     }
 $scope.mandi = data;
 })
-}
+
 catch(e){
  var userData = JSON.parse(localStorage.getItem('json_data'));
         if(userData !== null){
