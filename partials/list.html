@@ -24,7 +24,7 @@
 </div>
   <ul class="artistlist"  >
     
-    <li class="artist cf" ng-repeat="item in mandi.records |  orderBy: artistOrder:direction"">
+    <li class="artist cf" ng-repeat="item in mandi.records  | orderBy 'commodity' :direction ">
     <a href="#/details/{{mandi.records.indexOf(item)}}">
       <div class="info">
         
