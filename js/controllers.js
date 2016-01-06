@@ -2,7 +2,7 @@ var mandiControllers = angular.module('mandiControllers', []);
 var url = null;
 mandiControllers.controller('ListController' , ['$scope', '$http',function($scope, $http) {
  
-try{
+
 $scope.url = 'https://data.gov.in/api/datastore/resource.json?resource_id=9ef84268-d588-465a-a308-a864a43d0070&api-key=84774f4bb9dc59c6e753bfea7e3e2e5e';
 url = 'https://data.gov.in/api/datastore/resource.json?resource_id=9ef84268-d588-465a-a308-a864a43d0070&api-key=84774f4bb9dc59c6e753bfea7e3e2e5e';
 $http.get($scope.url).success(function(data) {
@@ -11,12 +11,7 @@ $http.get($scope.url).success(function(data) {
     }
 $scope.mandi = data;
 }
-catch(e){
- var userData = JSON.parse(localStorage.getItem('json_data'));
-        if(userData !== null){
-            $scope.mandi = userData;
-        }
-}
+
 })
 $scope.ListController = function(){
 
@@ -31,7 +26,7 @@ $scope.mandi = data;})
 
 
 mandiControllers.controller('DetailsController' , ['$scope', '$http','$routeParams',function($scope, $http, $routeParams) {
- try{
+ 
 $http.get(url).success(function(data) {
 if( supports_html5_storage() ){
         localStorage.setItem('json_data', JSON.stringify(data))
@@ -53,12 +48,8 @@ else{
 $scope.nextItem = 0;
 }
 }
-}
-catch(e){
- var userData = JSON.parse(localStorage.getItem('json_data'));
-        if(userData !== null){
-            $scope.mandi = userData;
-        }
+
+
 }
 
 });
