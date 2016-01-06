@@ -54,7 +54,7 @@ $scope.nextItem = 0;
 }
 );
 }
-catch(e){
+catch(e2){
  var userData1 = JSON.parse(localStorage.getItem('json_data'));
         if(userData1 !== null){
             $scope.mandi = userData1;
