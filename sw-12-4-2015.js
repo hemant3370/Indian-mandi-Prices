@@ -16,7 +16,7 @@ var CACHE_NAME = 'sw-12-4-2015-cache-v' + this.version;
 var urlsToCache = [
   'index.html',
   'css/style.css',
-  'js/app.js',
+  'js/app.js.js',
   'js/controllers.js',
   'lib/loading-bar.min.js',
   'lib/loading-bar.min.css',
