@@ -52,7 +52,7 @@ $scope.nextItem = Number($routeParams.itemId)+1;
 else{
 $scope.nextItem = 0;
 }
-});
+);
 }
 catch(e){
  var userData1 = JSON.parse(localStorage.getItem('json_data'));
