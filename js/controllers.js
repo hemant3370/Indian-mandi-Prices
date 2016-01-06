@@ -22,7 +22,6 @@ $scope.mandi = data;
  
 });
 
-$scope.mandi = data;}
 }]);
 
 
