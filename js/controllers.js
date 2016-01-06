@@ -17,9 +17,8 @@ $http.get($scope.url).success(function(data) {
 
  
 $scope.mandi = data;
-}
 });
-
+}
 }]);
 
 
