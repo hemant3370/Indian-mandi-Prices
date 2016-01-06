@@ -2,14 +2,16 @@ var mandiControllers = angular.module('mandiControllers', []);
 var url = null;
 mandiControllers.controller('ListController' , ['$scope', '$http',function($scope, $http) {
  
-try{
+
 $scope.url = 'https://data.gov.in/api/datastore/resource.json?resource_id=9ef84268-d588-465a-a308-a864a43d0070&api-key=84774f4bb9dc59c6e753bfea7e3e2e5e';
 url = 'https://data.gov.in/api/datastore/resource.json?resource_id=9ef84268-d588-465a-a308-a864a43d0070&api-key=84774f4bb9dc59c6e753bfea7e3e2e5e';
+try{
 $http.get($scope.url).success(function(data) {
  if( supports_html5_storage() ){
         localStorage.setItem('json_data', JSON.stringify(data))
     }
 $scope.mandi = data;
+})
 }
 catch(e){
  var userData = JSON.parse(localStorage.getItem('json_data'));
