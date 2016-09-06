@@ -6,9 +6,6 @@ mandiControllers.controller('ListController' , ['$scope', '$http',function($scop
 $scope.url = 'https://data.gov.in/api/datastore/resource.json?resource_id=9ef84268-d588-465a-a308-a864a43d0070&api-key=84774f4bb9dc59c6e753bfea7e3e2e5e';
 url = 'https://data.gov.in/api/datastore/resource.json?resource_id=9ef84268-d588-465a-a308-a864a43d0070&api-key=84774f4bb9dc59c6e753bfea7e3e2e5e';
 $http.get($scope.url).success(function(data) {
- if( supports_html5_storage() ){
-        localStorage.setItem('json_data', JSON.stringify(data))
-    }
 $scope.mandi = data;
 }
 
@@ -28,9 +25,7 @@ $scope.mandi = data;})
 mandiControllers.controller('DetailsController' , ['$scope', '$http','$routeParams',function($scope, $http, $routeParams) {
  
 $http.get(url).success(function(data) {
-if( supports_html5_storage() ){
-        localStorage.setItem('json_data', JSON.stringify(data))
-    }
+
     
 $scope.mandi = data;
 $scope.whichItem = $routeParams.itemId;
