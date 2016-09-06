@@ -13,18 +13,18 @@
 </select>
 </label>
 <label class="formgroup">
-      <input type="radio" ng-model="direction" name="direction" value="reverse" >
+      <input type="radio" ng-model="direction" name="direction" checked>
       ascending
        
      </label>
     <label class="formgroup">
-      <input type="radio" ng-model="direction" name="direction" checked >
+      <input type="radio" ng-model="direction" name="direction" value="reverse">
       descending
     </label>
 </div>
   <ul class="artistlist"  >
     
-    <li class="artist cf" ng-repeat="item in mandi.records  | orderBy 'commodity' :direction ">
+    <li class="artist cf" ng-repeat="item in mandi.records">
     <a href="#/details/{{mandi.records.indexOf(item)}}">
       <div class="info">
         
